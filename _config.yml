@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Welcom to RedforestJiao
+title: HSYPN's Blog
 subtitle: 'A Virtual RIP'
 description: ''
-keywords:
-author: Johnson(pronounce in Chinese)
-language: zh-tw
+keywords: cosmology,astronomy
+author: Johnson
+language: zh-CN
 timezone: Asia/Taipei
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://example.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

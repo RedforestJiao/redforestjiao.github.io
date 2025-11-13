@@ -51,7 +51,7 @@ counter:
   archive_posts:
     zero: 暂无日志。
     one: 目前共计 1 篇日志。
-    other: "目前共计 %d 篇日志。"
+    other: "那你tm还写 %d 篇日记? 下贱!"
 state:
   posts: 日志
   tags: 标签
