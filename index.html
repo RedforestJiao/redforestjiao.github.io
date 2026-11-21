@@ -26,7 +26,7 @@
 <meta property="og:description" content="在宇宙学与日常之间，记录学习、生活和偶尔的灵感。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-12T14:41:13.000Z">
-<meta property="article:modified_time" content="2026-11-21T04:11:44.129Z">
+<meta property="article:modified_time" content="2026-11-21T04:16:14.970Z">
 <meta property="article:author" content="HSYPN">
 <meta property="article:tag" content="cosmology,astronomy">
 <meta name="twitter:card" content="summary">
@@ -145,6 +145,11 @@ html[data-mellow-theme="dark"] .m-card{border-color:var(--m-line)}
 .mellow .header,.mellow .site-brand-container,.mellow .site-meta,.mellow .brand,.mellow .site-title,.mellow .menu-item{opacity:1!important;transform:none!important}
 .mellow .m-card{animation:none}.m-toc{display:block!important}.content .post-aside{display:none!important}
 .m-home .m-left,.m-home .m-right,.m-home .m-music{position:static;top:auto}
+.m-navigation .m-nav-grid{display:flex;flex-direction:column;gap:6px}.m-navigation .m-nav-grid a{display:flex;align-items:center;gap:12px;padding:8px 12px;border:0;border-radius:12px;background:transparent;color:var(--m-muted);font-size:14px;font-weight:600;text-align:left;transition:background .3s,color .3s}
+.m-navigation .m-nav-grid svg{width:16px;height:16px;flex:0 0 16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.m-navigation .m-nav-grid a:hover,.m-navigation .m-nav-grid a:focus-visible{background:var(--m-soft);color:var(--m-accent)}
+.m-avatar{transition:transform .5s ease,box-shadow .5s ease;transform-origin:center}
+@media(hover:hover){.m-avatar:hover{transform:rotate(3deg) scale(1.05);box-shadow:0 10px 28px rgba(177,132,66,.24)}}
 .mellow .menu .menu-item a{padding:8px 4px!important}
 .mellow.m-section .main{max-width:960px;padding:112px 24px 0;min-height:calc(100vh - 170px)}
 .mellow.m-section .main-inner{display:block}.mellow.m-section .content{padding-top:0}.mellow.m-section .main:has(.m-article-grid){max-width:1160px}
@@ -174,7 +179,7 @@ html[data-mellow-theme="dark"] .m-card{border-color:var(--m-line)}
 @media(max-width:390px){.m-notes{grid-template-columns:1fr}.mellow .menu{gap:6px}}
 @media(max-width:1000px){.mellow.m-section .main-inner.m-article-grid{display:block}.m-section .m-article-grid .m-toc{display:none!important}}
 @media(max-width:760px){.mellow.m-section .main{padding:150px 20px 0}.m-section .m-community-heading h1{font-size:28px}.m-section .m-community-search{margin:24px auto}.m-music-dock{right:16px;bottom:16px}.mellow.m-section .footer{padding-bottom:90px}}
-@media(prefers-reduced-motion:reduce){.m-record{animation:none}.m-photo-open img{transition:none}}
+@media(prefers-reduced-motion:reduce){.m-record{animation:none}.m-photo-open img,.m-avatar,.m-navigation .m-nav-grid a{transition:none}.m-avatar:hover{transform:none}}
 </style><script>try{if(localStorage.getItem('mellow-theme')==='dark')document.documentElement.dataset.mellowTheme='dark'}catch(_){}</script></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" class="mellow m-home" data-community-api="">
@@ -242,7 +247,7 @@ html[data-mellow-theme="dark"] .m-card{border-color:var(--m-line)}
       <div class="main-inner">
 <aside class="m-left" aria-label="个人资料与导航">
   <section class="m-card m-profile"><img class="m-avatar" src="/images/userhead.gif" alt="HSYPN" width="90" height="90"><h2>HSYPN</h2><p class="m-subtitle">人生小满胜万全</p><p>一名宇宙学与天体物理方向的在读博士生。<br>在星空、代码与生活之间，寻找自己的答案。</p><div class="m-social"><a target="_blank" rel="noopener" href="https://github.com/RedforestJiao" aria-label="GitHub 个人主页" title="GitHub">GH</a><a href="mailto:877171234@qq.com" aria-label="发送邮件" title="E-Mail">✉</a><a target="_blank" rel="noopener" href="https://space.bilibili.com/95666152" aria-label="哔哩哔哩个人主页" title="Bilibili">B</a></div><div class="m-counts"><a href="/blog/"><strong>2</strong><span>文章</span></a><a href="/categories/"><strong>2</strong><span>分类</span></a><a href="/tags/"><strong>0</strong><span>标签</span></a></div></section>
-  <section class="m-card m-navigation"><h3 class="m-widget-title">随处逛逛</h3><nav class="m-nav-grid" aria-label="快捷导航"><a href="/blog/">随笔</a><a href="/archives/">归档</a><a href="/categories/">分类</a><a href="/about/">关于我</a><a href="/photowall/">照片墙</a></nav></section>
+  <section class="m-card m-navigation"><h3 class="m-widget-title">导航</h3><nav class="m-nav-grid" aria-label="快捷导航"><a href="/archives/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v4H4z M6 8v12h12V8 M10 12h4"></path></svg><span>归档</span></a><a href="/moments/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H8l-5 3 1-6a8 8 0 1 1 17-5z M8 11h.01 M12 11h.01 M16 11h.01"></path></svg><span>碎碎念</span></a><a href="/photowall/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z M4 16l5-5 4 4 3-3 4 4 M15 8h.01"></path></svg><span>照片墙</span></a><a href="/blog/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15 M12 5C8 2 4 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-2-1-6-2-10 1z"></path></svg><span>随笔</span></a><a href="/categories/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z"></path></svg><span>分类</span></a><a href="/about/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16v-4 M12 8h.01 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path></svg><span>关于</span></a></nav></section>
 </aside>
 
         <div class="content-wrap">
