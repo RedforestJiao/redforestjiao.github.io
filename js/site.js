@@ -116,7 +116,17 @@ function interactions(){
   audio.addEventListener('ended',()=>{if(!audio.loop){setTrack(current+1);start();}});
   seek.addEventListener('input',()=>{if(Number.isFinite(audio.duration))audio.currentTime=audio.duration*Number(seek.value)/100;});
   const moments=$('[data-community-page=moments]');
-  if(moments){let month='';const input=moments.querySelector('input'),items=Array.from(moments.querySelectorAll('.m-moment')),empty=moments.querySelector('.m-empty');function filter(){const q=input.value.trim().toLocaleLowerCase();let count=0;items.forEach(item=>{item.hidden=!!((month&&item.dataset.month!==month)||!item.textContent.toLocaleLowerCase().includes(q));if(!item.hidden)count++;});empty.hidden=count>0;}input.addEventListener('input',filter);moments.querySelectorAll('[data-month][type=button]').forEach(button=>button.addEventListener('click',()=>{month=button.dataset.month;moments.querySelectorAll('[data-month][type=button]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));filter();}));}
+  if(moments){
+    let month='',page=1;const pageSize=5,input=moments.querySelector('input'),items=Array.from(moments.querySelectorAll('.m-moment')),empty=moments.querySelector('.m-empty'),pagination=moments.querySelector('.m-moment-pagination');
+    function render(){
+      const q=input.value.trim().toLocaleLowerCase(),matches=items.filter(item=>(!month||item.dataset.month===month)&&item.textContent.toLocaleLowerCase().includes(q)),pages=Math.max(1,Math.ceil(matches.length/pageSize));page=Math.min(page,pages);
+      items.forEach(item=>item.hidden=true);matches.slice((page-1)*pageSize,page*pageSize).forEach(item=>item.hidden=false);
+      empty.hidden=matches.length>0;moments.querySelector('.m-moment-count').textContent=(month||q?'找到 ':'共 ')+matches.length+' 条碎碎念';pagination.hidden=matches.length===0;pagination.querySelector('span').textContent=page+' / '+pages;
+      pagination.querySelector('[data-moment-page="-1"]').disabled=page===1;pagination.querySelector('[data-moment-page="1"]').disabled=page===pages;
+    }
+    input.addEventListener('input',()=>{page=1;render();});moments.querySelectorAll('[data-month][type=button]').forEach(button=>button.addEventListener('click',()=>{month=button.dataset.month;page=1;moments.querySelectorAll('[data-month][type=button]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));render();}));
+    pagination.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{page+=Number(button.dataset.momentPage);render();moments.querySelector('.m-moments').scrollIntoView({block:'start'});}));render();
+  }
   const photos=$('[data-community-page=photos]');
   if(photos){
     const cards=Array.from(photos.querySelectorAll('.m-photo-card')),anchors=Array.from(photos.querySelectorAll('.m-photo-open')),filters=Array.from(photos.querySelectorAll('[data-photo-filter]')),dialog=$('#m-photo-viewer'),full=$('#m-photo-full'),error=$('#m-photo-error');let group=[],index=0,previousFocus=null;
@@ -136,6 +146,7 @@ function interactions(){
   }
   const toc=$('.m-toc');
   if(toc){
+    const compact=matchMedia('(max-width:1000px)');const setToc=()=>toc.open=!compact.matches;setToc();compact.addEventListener('change',setToc);
     const links=Array.from(toc.querySelectorAll('a.nav-link'));
     const sections=links.map(link=>{try{return document.getElementById(decodeURIComponent(link.hash.slice(1)));}catch(_){return null;}});
     let queued=false;
