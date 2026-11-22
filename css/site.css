@@ -114,6 +114,7 @@ html[data-mellow-theme="dark"] .m-card{border-color:var(--m-line)}
 .m-article-cover{margin:0;overflow:hidden;border-radius:24px 24px 0 0;background:var(--m-soft);border:1px solid var(--m-line);border-bottom:0}
 .m-article-cover img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin:0}
 .mellow.m-article .post-block{border-radius:0 0 24px 24px;padding:38px 42px}
+.mellow.m-article .post-main:not(:has(.m-article-cover)) .post-block{border-radius:24px}
 .m-article .post-header{text-align:left;margin-bottom:32px}.m-article .post-title{font-size:34px;line-height:1.5;margin-bottom:16px;overflow-wrap:anywhere}
 .m-article .post-meta{text-align:left;line-height:2}.m-article-sidebar{min-width:0;align-self:stretch}
 .m-article-sidebar .m-profile{padding:30px 24px}.m-article-sidebar .m-profile h2{font-size:27px}.m-article-sidebar .m-avatar{width:92px;height:92px}
@@ -123,16 +124,17 @@ html[data-mellow-theme="dark"] .m-card{border-color:var(--m-line)}
 .m-toc .m-toc-content{margin-top:18px;max-height:calc(100dvh - 220px);overflow:auto;overscroll-behavior:contain}.m-toc a{font-size:14px;padding:7px 10px;border-radius:8px;overflow-wrap:anywhere}.m-toc a.active{background:var(--m-soft)}
 .m-article .post-body :is(h1,h2,h3,h4,h5,h6){scroll-margin-top:145px}
 /* A dated timeline of small moments, with search and month filters. */
+.m-moments-page{--m-moment-accent:#4f46e5}[data-mellow-theme=dark] .m-moments-page{--m-moment-accent:#a5b4fc}
 .m-moments-page .m-community-heading{margin-bottom:36px}.m-moments-page .m-community-heading h1{font-size:36px}
 .m-moment-search{position:relative;display:block;max-width:440px;margin:0 auto 30px}.m-moment-search>span{position:absolute;left:20px;top:8px;font-size:28px;color:var(--m-muted)}
 .m-section .m-moment-search .m-community-search{max-width:none;margin:0;padding:15px 20px 15px 52px}
-.m-moments-page .m-months{margin-bottom:14px}.m-moments-page .m-months button{padding:8px 19px;font-weight:600}.m-moments-page .m-months button[aria-pressed=true]{background:var(--m-accent);color:var(--m-bg)}
+.m-moments-page .m-months{margin-bottom:14px}.m-moments-page .m-months button{padding:8px 19px;font-weight:600}.m-moments-page .m-months button[aria-pressed=true]{background:var(--m-moment-accent);border-color:var(--m-moment-accent);color:var(--m-bg)}
 .m-moment-count{font-size:13px;color:var(--m-muted);margin:0 0 28px}
-.m-moments{margin-left:18px;padding-left:30px;border-left:2px solid var(--m-accent);scroll-margin-top:150px}
+.m-moments{margin-left:18px;padding-left:30px;border-left:2px solid var(--m-moment-accent);scroll-margin-top:150px}
 .m-moments .m-moment{border-left:1px solid var(--m-line);padding:27px 30px;margin-bottom:24px;border-radius:24px}
-.m-moment::before{content:'';position:absolute;left:-39px;top:32px;width:12px;height:12px;background:var(--m-accent);border:3px solid var(--m-bg);border-radius:50%}
-.m-moment-meta{gap:10px;margin-bottom:18px}.m-moment-meta time{font-size:14px;font-weight:700;color:var(--m-accent);font-variant-numeric:tabular-nums}.m-moment-meta span{font-size:13px;padding:3px 11px;border-radius:999px}.m-mood{color:#a23c6f;background:#f9eaf2}.m-weather{color:#327e9b;background:#e9f4fc}
-[data-mellow-theme=dark] .m-mood{color:#f0a0c6;background:#452e40}[data-mellow-theme=dark] .m-weather{color:#91cae2;background:#233e4d}
+.m-moment::before{content:'';position:absolute;left:-39px;top:32px;width:12px;height:12px;background:var(--m-moment-accent);border:3px solid var(--m-bg);border-radius:50%}
+.m-moment-meta{gap:10px;margin-bottom:18px}.m-moment-meta time{font-size:14px;font-weight:700;color:var(--m-moment-accent);font-variant-numeric:tabular-nums}.m-moment-meta span{font-size:13px;padding:3px 11px;border-radius:999px}.m-mood{color:#c62846;background:#fde8ed;font-weight:600}.m-weather{color:#327e9b;background:#e9f4fc}
+[data-mellow-theme=dark] .m-mood{color:#ff9eb0;background:#4a2430}[data-mellow-theme=dark] .m-weather{color:#91cae2;background:#233e4d}
 .m-moment-pagination{display:flex;justify-content:center;align-items:center;gap:22px;margin:32px 0;font-size:14px;color:var(--m-muted)}.m-moment-pagination[hidden]{display:none}
 .m-moment-pagination button{background:var(--m-card);border:1px solid var(--m-line);border-radius:999px;color:var(--m-ink);font:inherit;padding:9px 20px;cursor:pointer}.m-moment-pagination button:disabled{opacity:.4;cursor:default}
 :is(.m-months button,.m-moment-pagination button,.m-toc summary,.m-community-search):focus-visible{outline:2px solid var(--m-accent);outline-offset:4px}
